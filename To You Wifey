@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To you, My Babygirl!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ffc0cb, #ffe4e1);
+            color: #333;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            background-color: #ff69b4;
+            color: white;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        main img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .message {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        .playlist {
+            margin-top: 30px;
+        }
+        footer {
+            padding: 10px;
+            background-color: #ff69b4;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Happy Birthday, Babygirl!</h1>
+    </header>
+    <main>
+        <img src="https://drive.google.com/uc?id=1obPj21qDHShi8qWUP59pDLt2xnTEy6cE" alt="My Brainiac">
+        <p class="message">Baby, even though you're 900+ miles away, my heart celebrates you today and always. You're the most incredible person I have in my corner, and I am so grateful to have you in my life. Here’s to a year full of love, laughter, and dreams coming true. You mean the world to me! After all, you are my world.</p>
+
+        <div class="playlist">
+            <h2>A Playlist Just for You</h2>
+            <iframe src="https://open.spotify.com/embed/playlist/your_playlist_id" width="80%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </main>
+    <footer>
+        <p>With all my love, <br> Your Man Kuffy</p>
+        <p><a href="#">Message me</a> when you see this!</p>
+    </footer>
+    <div class="countdown">
+        <h2>Counting Down Until You're In My Arms Again:</h2>
+        <p id="timer"></p>
+    </div>
+    <script>
+        const countdownDate = new Date("December 22, 2024 16:10:00").getTime();
+
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const timeLeft = countdownDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = `
+                ${days}d ${hours}h ${minutes}m ${seconds}s
+            `;
+
+            if (timeLeft < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("timer").innerHTML = "The moment is here!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
